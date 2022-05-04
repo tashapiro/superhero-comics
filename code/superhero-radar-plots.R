@@ -56,28 +56,34 @@ labels<-data.frame(
 )
 
 segments<- data.frame(
-  x1=rep(0,5),
+  x1=rep(0.5,5),
   x2=rep(5.5,5), 
   y1=c(0,25,50,75,100), 
   y2=c(0,25,50,75,100)
 )
 
-#PLOT -- GUARDIANS, easily swapped with other datasets to show avengers or justice league
+#PLOT -- GUARDIANS, easily swapped with other datasets to show other groups
 ggplot(df_guardians, aes(x=ability, y=stat, fill=ability))+
   #create y axis text
   geom_textpath(inherit.aes=FALSE, mapping=aes(x=ability, label=ability, y=130), fontface="bold", upright=TRUE, text_only=TRUE, size=3, color=pal_font)+
+  #image with cahracter icon in the center
   geom_image(mapping=aes(y=-70,x=1,image=image), size=0.225)+
+  #text for actual name below superhero name
+  geom_text(inherit.aes=FALSE, mapping=aes(label=full_name, x=1, y=-70), vjust=-11.5, color="white", size=3.25)+
+  #create curved coordinate system, curvedpolar accomodates text
   coord_curvedpolar()+
   #create linesegments to represent panel gridlines
   geom_segment(inherit.aes=FALSE, data = segments, mapping=aes(x=x1,xend=x2,y=y1,yend=y2), size=0.35, color=pal_line)+
+  #bars
   geom_col(show.legend = FALSE, width=.8)+
   #text for panel gridlines
   geom_textsegment(inherit.aes=FALSE, data=labels, mapping=aes(x=5.5, xend=6.5, y= y, yend=y, label=y), color = pal_line, textcolour= pal_font, linewidth=0.35, size=2.5)+
-  #text for actual name below superhero name
-  geom_text(inherit.aes=FALSE, mapping=aes(label=full_name, x=0, y=135), vjust=-1, color="white", size=3.5)+
+  #adjist scales for fill (custom palette) & create y scale limits (create blank circle at center to store image)
   scale_fill_manual(values=pal)+
   scale_y_continuous(limits=c(-70,135))+
+  #iterate per character
   facet_wrap(~toupper(name))+
+  #add labels & theme
   labs(title="GUARDIANS OF THE GALAXY", subtitle="Power Stats by Superhero. Abilities scaled from 0 to 100.",
        caption="Data from Superhero API | Graphic @tanya_shapiro")+
   theme_minimal()+
