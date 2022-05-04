@@ -13,7 +13,7 @@ Characters are from various different comic book publishers, including but not l
 
 ## Visualization Gallery
 
-Visualizations created with the help of **ggplot2** and ggplot extensions, **geomtext_path** and **ggimage**. I picked select characters from popular groups of super heros & villains (Justice League, The Avengers, Guardians of The Galaxy), and plotted the values of their super abilities. Images for these characters were downloaded from the respective **[DC Fandom](https://dc.fandom.com/wiki/DC_Comics_Database)** and **[Marvel Fandom](https://marvel.fandom.com/wiki/Marvel_Database)** sites. 
+Visualizations created with the help of **ggplot2** and ggplot extensions, **geomtext_path** and **ggimage**. I picked select characters from popular affiliations of super heros & villains (Justice League, The Avengers, Guardians of The Galaxy), and plotted the values of their super abilities. Images for these characters were downloaded from the respective **[DC Fandom](https://dc.fandom.com/wiki/DC_Comics_Database)** and **[Marvel Fandom](https://marvel.fandom.com/wiki/Marvel_Database)** sites. 
 
 ### Justice League
 ![plot](./plots/justice_league.jpeg)
