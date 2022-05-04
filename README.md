@@ -2,7 +2,6 @@
 
 This project collects data using the [Superhero API](https://www.superheroapi.com/) to explore individual comic book character backgrounds. Data was compiled using R (httr & jsonlite packages), code for data collection process can be found [here](https://github.com/tashapiro/superhero-comics/blob/main/code/superhero-api-data-collection.R). 
 
-Visualizations created with the help of **ggplot2** and ggplot extensions, **geomtext_path** and **ggimage**. 
 
 ## Data
 
@@ -14,7 +13,9 @@ Characters are from various different comic book publishers, including but not l
 
 
 
-## Visualizations
+## Visualization Gallery
+
+Visualizations created with the help of **ggplot2** and ggplot extensions, **geomtext_path** and **ggimage**. I picked select characters from popular groups of super heros & villains (Justice League, The Avengers, Guardians of The Galaxy), and plotted the values of their super abilities. Images for these characters were downloaded from the respective **[DC Fandom](https://dc.fandom.com/wiki/DC_Comics_Database)** and **[Marvel Fandom](https://marvel.fandom.com/wiki/Marvel_Database)** sites. 
 
 ### Justice League
 ![plot](./plots/justice_league.jpeg)
